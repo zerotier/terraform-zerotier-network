@@ -1,4 +1,3 @@
-
 locals {
   assignment_pools = flatten([
     for subnet in var.subnets : [{

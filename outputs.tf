@@ -1,4 +1,3 @@
-
 output "name" {
   value = zerotier_network.this.name
 }
