@@ -8,9 +8,7 @@ runs on Ethernet, such as mDNS, FCoE, SCCP, IPX, BGP or OSPF.
 
 ## Usage
 
-=======
 ```hcl
->>>>>>> someara/readme
 module "network" {
   source      = "zerotier/network/zerotier"
   version     = "0.0.1"
@@ -18,7 +16,4 @@ module "network" {
   subnets     = ["10.9.8.0/24"]
   flow_rules  = "accept;"
 }
-<<<<<<< HEAD
-=======
 ```
-
