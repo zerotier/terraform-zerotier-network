@@ -1,10 +1,10 @@
 # ZeroTier Network Terraform Module
 
-ZeroTier lets you connect network endpoints to programmable virtual
-LANs over the Internet. It provides encryption, NAT traversal, flow
-control rules, multipath, and encryption, without the hassle of having
-to manage TLS keys. It supports IPv4, IPv6, and any other protocol that
-runs on Ethernet, such as mDNS, FCoE, SCCP, IPX, BGP or OSPF.
+ZeroTier lets you connect machines, containers, and programs to a
+encrypted virtual LANs over the Internet. It provides NAT traversal,
+flow control rules, multipath, and more, without the hassle of having
+to manage TLS keys. It supports IPv4, IPv6, as well as any other protocol
+that runs on Ethernet, such as mDNS, FCoE, SCCP, IPX, BGP or OSPF.
 
 ## Usage
 
