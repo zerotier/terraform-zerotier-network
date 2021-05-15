@@ -9,11 +9,18 @@ OSPF.
 
 ## Usage
 
+First, log into [my.zerotier.com](https://my.zerotier.com) and create an API
+token under the [Account](https://my.zerotier.com/account) section.
+
+Next, export the `ZEROTIER_CENTRAL_TOKEN` variable in your shell or
+Terraform workspace.
+
+Then, from your Terraform code, can create Zerotier Networks.
 
 ```hcl
 module "network" {
   source      = "zerotier/network/zerotier"
-  version     = "0.0.1"
+  version     = "0.0.6"
   description = "Hello ZeroTier!"
   subnets     = ["10.9.8.0/24"]
   flow_rules  = "accept;"
