@@ -20,7 +20,7 @@ Then, from your Terraform code, can create ZeroTier networks.
 ```hcl
 module "network" {
   source      = "zerotier/network/zerotier"
-  version     = "0.0.7"
+  version     = "0.0.8"
   description = "Hello ZeroTier!"
   subnets     = ["10.9.8.0/24"]
   flow_rules  = "accept;"
