@@ -15,12 +15,12 @@ token under the [Account](https://my.zerotier.com/account) section.
 Next, export the `ZEROTIER_CENTRAL_TOKEN` variable in your shell or
 Terraform workspace.
 
-Then, from your Terraform code, can create Zerotier Networks.
+Then, from your Terraform code, can create ZeroTier networks.
 
 ```hcl
 module "network" {
   source      = "zerotier/network/zerotier"
-  version     = "0.0.6"
+  version     = "0.0.7"
   description = "Hello ZeroTier!"
   subnets     = ["10.9.8.0/24"]
   flow_rules  = "accept;"
