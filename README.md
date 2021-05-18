@@ -43,8 +43,8 @@ Finally, we're able to write create some Zerotier Networks with
 Terraform. Create a directory and place a `main.tf` inside of it.
 
 ```
-mkdir -p examples/single-network && cd examples/single-network
-emacs main.tf
+$ mkdir -p examples/single-network && cd examples/single-network
+$ emacs main.tf
 ```
 
 Add the following to your `main.tf`
