@@ -9,22 +9,21 @@ BGP or OSPF.
 
 ## Conceptual Prerequisites
 
-- ZeroTier ```Networks``` can be thought of as virtual Ethernet switches that run
+- ZeroTier `Networks` can be thought of as virtual Ethernet switches that run
   on the Internet. These switches can provision IPv4 and IPv6
-  addresses from pools. Networks IDs look like ```abcdef1234567890```.
-- ```Nodes``` are clients, usually running the
+  addresses from pools. Networks IDs look like `abcdef1234567890`.
+- `Nodes` are clients, usually running the
   [ZeroTier Client](https://www.zerotier.com/download/). Nodes "plug
   themselves in" to these switches with they attempt to join the
-  network. Nodes have ```Identities```, which  are shorter, and look
-  something like ```abcdef1234```.
+  network. Nodes have `Identities`, which  are shorter, and look
+  something like `abcdef1234`.
 - `Members` are associations between `Networks` and `Nodes`,
   representing the switch administrator authorizing the node to be on
   the network. IP addresses can optionally be configured on a
   per-membership basis, instead of being assigned from a pool.
 - `Node Controllers` manage
   [Flow Control Rules](https://www.zerotier.com/manual/#3), Assignment
-  Pools, Networks, and
-  Memberships. [ZeroTier Central](https://my.zerotier.com) is our SaaS
+  Pools, Networks, and Memberships. [ZeroTier Central](https://my.zerotier.com) is our SaaS
   offering, which is driven by the
   [ZeroTier Terraform Provider](https://registry.terraform.io/providers/zerotier/zerotier/latest).
   
