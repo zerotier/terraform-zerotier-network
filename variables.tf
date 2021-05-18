@@ -27,30 +27,36 @@ variable "description" {
 }
 
 variable "enable_broadcast" {
-  type    = bool
-  default = true
+  description = "Enable broadcast."
+  type        = bool
+  default     = true
 }
 
 variable "flow_rules" {
-  type    = string
-  default = "drop;"
+  description = "Network rules engine specifcation."
+  type        = string
+  default     = "drop;"
 }
 
 variable "mtu" {
-  type    = number
-  default = 2800
+  description = "Maxiumum Transmission Unit."
+  type        = number
+  default     = 2800
 }
 
 variable "multicast_limit" {
-  type    = number
-  default = 32
+  description = "Multicast Limit."
+  type        = number
+  default     = 32
 }
 
 variable "private" {
-  default = true
+  description = "Private or Public network"
+  default     = true
 }
 
 variable "routes" {
+  description = "Routes to be pushed down to client."
   type = list(object({
     target = string
     via    = string
@@ -67,6 +73,7 @@ variable "routes" {
 }
 
 variable "subnets" {
-  type    = list(string)
-  default = []
+  description = "Subnet CIDR Ranges."
+  type        = list(string)
+  default     = []
 }

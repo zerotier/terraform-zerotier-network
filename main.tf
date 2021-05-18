@@ -1,8 +1,8 @@
 locals {
   assignment_pools = flatten([
     for subnet in var.subnets : [{
-      start = cidrhost(subnet, min(range(32 - split("/", subnet)[1])...))
-      end   = cidrhost(subnet, max(range(32 - split("/", subnet)[1])...))
+      start = cidrhost(subnet, min(range(32 - split("/", subnet)[1])...) + 1)
+      end   = cidrhost(subnet, pow(2, (32 - split("/", "10.9.8.0/24")[1])) - 1)
     }]
   ])
 }

@@ -23,8 +23,7 @@ BGP or OSPF.
   per-membership basis, instead of being assigned from a pool.
 - `Node Controllers` manage
   [Flow Control Rules](https://www.zerotier.com/manual/#3), Assignment
-  Pools, Networks, and
-  Memberships. [ZeroTier Central](https://my.zerotier.com) is our SaaS
+  Pools, Networks, and Memberships. [ZeroTier Central](https://my.zerotier.com) is our SaaS
   offering, which is driven by the
   [ZeroTier Terraform Provider](https://registry.terraform.io/providers/zerotier/zerotier/latest).
   
@@ -44,8 +43,8 @@ Finally, we're able to write create some Zerotier Networks with
 Terraform. Create a directory and place a `main.tf` inside of it.
 
 ```
-mkdir -p examples/single-network && cd examples/single-network
-emacs main.tf
+$ mkdir -p examples/single-network && cd examples/single-network
+$ emacs main.tf
 ```
 
 Add the following to your `main.tf`
@@ -89,8 +88,8 @@ Terraform will perform the following actions:
       + tf_last_updated  = (known after apply)
 
       + assignment_pool {
-          + end   = "10.9.8.7"
-          + start = "10.9.8.0"
+          + end   = "10.9.8.255"
+          + start = "10.9.8.1"
         }
 
       + route {
@@ -133,7 +132,9 @@ authorize her to be on the network, she will not have access.
 
 Alternatively she could do so from her CLI.
 
-![zerotier-cli join 8286ac0e475d8abe](https://i.imgur.com/egCsP7I.png)
+```
+$ zerotier-cli join 8286ac0e475d8abe
+```
 
 Alice can be authorized by creating a `Membership` objectin the
 API. Her laptop will be Auto-Assigned an IP by ZeroTier in the range
@@ -149,4 +150,3 @@ module "member" {
   network_id  = module.network.id
 }
 ```
-
