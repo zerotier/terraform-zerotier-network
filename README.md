@@ -137,8 +137,6 @@ Alternatively she could do so from her CLI.
 zerotier-cli join 8286ac0e475d8abe
 ```
 
-![zerotier-cli join 8286ac0e475d8abe](https://i.imgur.com/egCsP7I.png)
-
 Alice can be authorized by creating a `Membership` objectin the
 API. Her laptop will be Auto-Assigned an IP by ZeroTier in the range
 `10.9.8.*.`
