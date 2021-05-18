@@ -126,6 +126,7 @@ using Infrastructure As Code with Terraform.
 
 # Memberships
 
+The next concept
 Alice can attempt to join our network from her laptop.
 
 ![](https://i.imgur.com/f8RXO0b.png)
@@ -134,9 +135,8 @@ Alternatively she could do so from her CLI.
 
 ![](https://i.imgur.com/egCsP7I.png)
 
-
 Alice can now by authorized to our network by creating a `Membership`
-in the API Her laptop will be Auto-Assigned an IP by ZeroTier in the range 10.9.8.*.
+in the API. Her laptop will be Auto-Assigned an IP by ZeroTier in the range 10.9.8.*.
 
 ```hcl
 module "member" {
