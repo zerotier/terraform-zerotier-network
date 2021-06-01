@@ -6,3 +6,7 @@ module "this" {
   subnets     = each.value.subnets
   flow_rules  = each.value.flow_rules
 }
+
+output "this" {
+  value = module.this
+}
