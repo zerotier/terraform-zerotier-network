@@ -26,10 +26,6 @@ output "flow_rules" {
   value = zerotier_network.this.flow_rules
 }
 
-output "mtu" {
-  value = zerotier_network.this.mtu
-}
-
 output "multicast_limit" {
   value = zerotier_network.this.multicast_limit
 }
@@ -48,8 +44,4 @@ output "creation_time" {
 
 output "id" {
   value = zerotier_network.this.id
-}
-
-output "tf_last_updated" {
-  value = zerotier_network.this.tf_last_updated
 }

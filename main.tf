@@ -23,14 +23,21 @@ locals {
 
 resource "zerotier_network" "this" {
   name             = var.name
-  assign_ipv4      = var.assign_ipv4
-  assign_ipv6      = var.assign_ipv6
   description      = var.description
   enable_broadcast = var.enable_broadcast
   flow_rules       = var.flow_rules
-  mtu              = var.mtu
   multicast_limit  = var.multicast_limit
   private          = var.private
+
+  assign_ipv4 {
+    zerotier = var.assign_ipv4.zerotier
+  }
+
+  assign_ipv6 {
+    zerotier = var.assign_ipv6.zerotier
+    sixplane = var.assign_ipv6.sixplane
+    rfc4193  = var.assign_ipv6.rfc4193
+  }
 
   dynamic "assignment_pool" {
     for_each = local.assignment_pools

@@ -4,7 +4,9 @@ variable "name" {
 
 variable "assign_ipv4" {
   description = "IPv4 Auto-Assign."
-  type        = map(bool)
+  type = object({
+    zerotier = bool
+  })
   default = {
     zerotier = true
   }
@@ -12,7 +14,11 @@ variable "assign_ipv4" {
 
 variable "assign_ipv6" {
   description = "IPv6 Auto-Assign."
-  type        = map(bool)
+  type = object({
+    zerotier = bool,
+    sixplane = bool,
+    rfc4193  = bool
+  })
   default = {
     zerotier = true
     sixplane = false
@@ -38,11 +44,11 @@ variable "flow_rules" {
   default     = "drop;"
 }
 
-variable "mtu" {
-  description = "Maxiumum Transmission Unit."
-  type        = number
-  default     = 2800
-}
+# variable "mtu" {
+#   description = "Maxiumum Transmission Unit."
+#   type        = number
+#   default     = 2800
+# }
 
 variable "multicast_limit" {
   description = "Multicast Limit."
