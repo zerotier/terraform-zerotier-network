@@ -52,7 +52,7 @@ Add the following to your `main.tf`
 ```hcl
 module "network" {
   source      = "zerotier/network/zerotier"
-  version     = "0.1.0"
+  version     = "1.0.0"
   name        = "hello_zerotier"
   description = "Hello ZeroTier!"
   subnets     = ["10.9.8.0/24"]
@@ -68,10 +68,10 @@ Terraform will perform the following actions:
 
   # module.this["hello_zerotier"].zerotier_network.this will be created
   + resource "zerotier_network" "this" {
-      + assign_ipv4      = {
+      + assign_ipv4 {
           + "zerotier" = true
         }
-      + assign_ipv6      = {
+      + assign_ipv6  {
           + "rfc4193"  = true
           + "sixplane" = false
           + "zerotier" = true
@@ -143,7 +143,7 @@ API. Her laptop will be Auto-Assigned an IP by ZeroTier in the range
 ```hcl
 module "member" {
   source      = "zerotier/member/zerotier"
-  version     = "0.1.0"
+  version     = "1.0.0"
   name        = "alice"
   description = "alice's laptop"
   member_id   = "ABCDEF1234"
