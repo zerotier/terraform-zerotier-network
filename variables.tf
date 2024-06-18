@@ -83,3 +83,23 @@ variable "subnets" {
   type        = list(string)
   default     = []
 }
+
+variable "dns" {
+  description = "DNS settings to be pushed down to client"
+  type = object({
+    domain  = string
+    servers = list(string)
+  })
+  default = {
+    domain  = ""
+    servers = []
+  }
+  validation {
+    condition     = can([for s in var.dns.servers : cidrnetmask("${s}/32")])
+    error_message = "dns.servers should be a valid IPv4 address."
+  }
+  validation {
+    condition     = var.dns.domain == "" ? true : can(regex("^[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,6}$", var.dns.domain))
+    error_message = "dns.domain should be a valid domain name."
+  }
+}

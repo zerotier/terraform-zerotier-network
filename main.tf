@@ -54,4 +54,9 @@ resource "zerotier_network" "this" {
       via    = route.value.via
     }
   }
+
+  dns {
+    domain  = var.dns.domain
+    servers = var.dns.servers
+  }
 }

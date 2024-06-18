@@ -45,3 +45,7 @@ output "creation_time" {
 output "id" {
   value = zerotier_network.this.id
 }
+
+output "dns" {
+  value = zerotier_network.this.dns
+}

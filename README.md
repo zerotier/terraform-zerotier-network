@@ -26,7 +26,7 @@ BGP or OSPF.
   Pools, Networks, and Memberships. [ZeroTier Central](https://my.zerotier.com) is our SaaS
   offering, which is driven by the
   [ZeroTier Terraform Provider](https://registry.terraform.io/providers/zerotier/zerotier/latest).
-  
+
 ## Usage
 
 Before we begin, we will need to log into [my.zerotier.com](https://my.zerotier.com) and create an API
@@ -95,6 +95,13 @@ Terraform will perform the following actions:
       + route {
           + target = "10.9.8.0/24"
         }
+      + dns {
+          + domain  = "example.com"
+          + servers = [
+              + "10.10.10.1",
+              + "10.10.10.2",
+            ]
+        }
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
@@ -116,7 +123,7 @@ module.this["hello_zerotier"].zerotier_network.this: Creation complete after 1s 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
 
-Check that it was created in the [ZeroTier Central Webui](my.zerotier.com)  
+Check that it was created in the [ZeroTier Central Webui](my.zerotier.com)
 
 ![](https://i.imgur.com/V5N04ew.png)
 
